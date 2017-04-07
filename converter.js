@@ -1,13 +1,13 @@
 function toCelsius (inp) {
 	var toCels = (inp - 32) * 5 / 9;
-	return toCels + '&degC';
+	
+	result.innerHTML = "<h2>" + toCels + "&degC</h2>";
 }
 
 function toFahrenheit (inp) {
 	var toFahr = inp * 9 / 5 + 32;
 	
 	result.innerHTML = "<h2>" + toFahr + "&degF</h2>";
-	return false;
 }
 
 // Get a reference to the button element in the DOM
@@ -24,12 +24,10 @@ function determineConverter (clickEvent) {
 		toFahrenheit(temp.value);
 	}
 	if(fahr.checked){
-		//result.innerHTML = "<h2>" + toCelsius(temp.value) + "&degC</h2>";
-		alert(toCelsius(temp.value));
+		toCelsius(temp.value);
 	}
   console.log("event", clickEvent);
 }
 
 // Assign a function to be executed when the button is clicked
 button.addEventListener("click", determineConverter);
-
