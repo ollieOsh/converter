@@ -1,13 +1,25 @@
 function toCelsius (inp) {
 	var toCels = (inp - 32) * 5 / 9;
 	
-	result.innerHTML = "<h2>" + toCels + "&degC</h2>";
+	if(inp > 90){
+		result.innerHTML = "<h2 style='color:red'>" + toCels + "&degC</h2>";
+	}else if(inp < 32){
+		result.innerHTML = "<h2 style='color:blue'>" + toCels + "&degC</h2>";
+	}else{
+		result.innerHTML = "<h2 style='color:green'>" + toCels + "&degC</h2>";
+	}
 }
 
 function toFahrenheit (inp) {
 	var toFahr = inp * 9 / 5 + 32;
 	
-	result.innerHTML = "<h2>" + toFahr + "&degF</h2>";
+	if(inp > 32){
+		result.innerHTML = "<h2 style='color:red'>" + toFahr + "&degF</h2>";
+	}else if(inp < 0){
+		result.innerHTML = "<h2 style='color:blue'>" + toFahr + "&degF</h2>";
+	}else{
+		result.innerHTML = "<h2 style='color:green'>" + toFahr + "&degF</h2>";
+	}
 }
 
 // Get a reference to the button element in the DOM
